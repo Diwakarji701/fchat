@@ -15,7 +15,7 @@ let peerConnection;
 const config = {
   iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
 };
-
+//commented out for testing
 // ========== Chat ========== //
 sendBtn.addEventListener('click', () => {
   const message = textarea.value.trim();
