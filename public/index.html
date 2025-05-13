@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebRTC Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="chat__section">
+    <header class="brand">
+      <h1>Chat</h1>
+    </header>
+
+    <section class="message__area" id="messageArea"></section>
+
+    <div id="videoContainer">
+      <video id="localVideo" autoplay muted></video>
+      <video id="remoteVideo" autoplay></video>
+    </div>
+
+    <div class="input__section">
+      <textarea id="textarea" placeholder="Type a message..." rows="1"></textarea>
+      <button id="sendBtn" class="send">Send</button>
+    </div>
+
+    <div class="controls">
+      <button id="startCall">Start Call</button>
+      <button id="shareScreen">Share Screen</button>
+    </div>
+  </main>
+
+  <!-- Incoming Call Modal -->
+  <div id="incomingCallModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Incoming Call</h2>
+      <p>You have an incoming video call.</p>
+      <button id="acceptCallBtn">Accept</button>
+      <button id="rejectCallBtn">Reject</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js" defer></script>
+</body>
+</html>
